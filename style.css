@@ -65,7 +65,7 @@ h1, h2, h3, h4, h5, h6,
 
 .blog article, .archive article, .search article,
 .single-column-layout .site-navigation,
-.single footer.entry-meta {
+.comment-respond {
 	border-color: #505050;
 
 }
@@ -174,9 +174,6 @@ Structure tweaks
 /*
 Content
 ******************************/
-.single-column-layout.single footer.entry-meta {
-	border-top: 1px solid;
-}
 
 /*
 Comments
@@ -184,4 +181,10 @@ Comments
 
 .comments-title-icon::before {
 	display: none;
+}
+
+.comment-respond {
+	background-color: #f5f5f5;
+	border-top: 1px solid;
+	border-radius: 0;
 }
