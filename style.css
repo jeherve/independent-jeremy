@@ -1,0 +1,187 @@
+/**
+ Theme Name:   Independent Jeremy
+ Theme URI:    http://jeremy.hu/
+ Description:  A Child Theme of Independent Publisher, for my personal blog
+ Author:       Jeremy Herve
+ Author URI:   http://jeremy.hu/
+ Template:     independent-publisher
+ Version:      1.0
+*/
+
+/* No overflows, useful for our custom colors behind the post image */
+html,body {
+	overflow-x: hidden;
+}
+
+/* Fonts */
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	font-size: 14px;
+	line-height: 1.5;
+	letter-spacing: -0.2px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	letter-spacing: normal;
+}
+
+/**
+Color Scheme
+https://chriskempson.github.io/base16/
+
+#f5f5f5 Background color
+#303030 Main text color
+
+#ac4142 Red, accent color
+#d28445 Orange, link color
+#f4bf75 Yellow
+#75b5aa Blue green, alternate color
+#aa759f Purple
+****************/
+
+body,
+.site {
+	background-color: #f5f5f5;
+	color: #303030;
+}
+
+h1, h2, h3, h4, h5, h6,
+.entry-title a,
+.entry-title a:visited,
+.main-navigation a,
+.main-navigation a:active,
+.main-navigation a:visited {
+	color: #ac4142;
+}
+
+.main-navigation a:hover {
+	color: #d28445;
+}
+
+.entry-title a:hover {
+	color: #d28445;
+}
+
+.blog article, .archive article, .search article,
+.single-column-layout .site-navigation,
+.single footer.entry-meta {
+	border-color: #505050;
+
+}
+
+.single .site-navigation {
+	border-bottom: 0 none;
+}
+
+a,
+a:visited,
+.enhanced-excerpts .enhanced-excerpt-read-more a,
+#infinite-footer .blog-credits a,
+#infinite-footer .blog-credits a:hover,
+.entry-meta a:hover,
+.site-footer a:hover {
+	color: #d28445;
+}
+
+/* Hover state */
+.entry-content a:hover {
+	color: #fff;
+	background: #d28445;
+	text-decoration: none;
+}
+
+.site-title a {
+	color: #303030;
+}
+
+
+.entry-meta,
+.entry-meta a {
+	color: #aa759f;
+}
+.contact-form label span {
+	color: #aa759f;
+}
+
+blockquote {
+	border-color: #ac4142;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	background: #ac4142;
+	background: -moz-linear-gradient(top, #ac4142 60%, #ac4142 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(60%, #ac4142), color-stop(100%, #ac4142)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #ac4142 60%, #ac4142 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #ac4142 60%, #ac4142 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #ac4142 60%, #ac4142 100%); /* IE10+ */
+	background: linear-gradient(top, #ac4142 60%, #ac4142 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ac4142', endColorstr='#ac4142', GradientType=0); /* IE6-9 */
+}
+
+
+/*
+Structure tweaks
+******************/
+
+/* Header */
+
+.single-column-layout.single .site-header-info {
+	display: block;
+}
+
+.single-column-layout #masthead .site-title {
+	margin-bottom: 20px;
+}
+
+.single-column-layout .site,
+.post-cover-overlay-post-title #page {
+	margin-top: 20px;
+}
+
+.single-column-layout .site-navigation {
+	margin-bottom: 0;
+}
+
+.site-logo img {
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	max-width: 100%;
+}
+
+/* Titles and entry meta */
+.single h1.entry-title {
+	margin-bottom: 10px;
+}
+
+.single h2.entry-title-meta {
+	margin-bottom: 20px;
+}
+
+.post-thumbnail {
+	max-width: 100%;
+}
+
+.single .wp-post-image, .page .wp-post-image, .blog .wp-post-image, .archive .wp-post-image {
+	margin-bottom: 0;
+}
+
+/*
+Content
+******************************/
+.single-column-layout.single footer.entry-meta {
+	border-top: 1px solid;
+}
+
+/*
+Comments
+******************************/
+
+.comments-title-icon::before {
+	display: none;
+}
