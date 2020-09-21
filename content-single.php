@@ -17,7 +17,14 @@
 		<h1 class="entry-title p-name" itemprop="name"><?php the_title(); ?></h1>
 		<h2 class="entry-title-meta">
 			<?php if ( independent_publisher_categorized_blog() ) {
-				echo independent_publisher_entry_meta_category_prefix() . ' ' . independent_publisher_post_categories();
+				if ( is_singular( 'post' ) ) {
+					echo independent_publisher_entry_meta_category_prefix() . ' ' . independent_publisher_post_categories();
+				}
+				if ( is_singular( 'traktivity_event' ) ) {
+					the_terms( get_the_id(), 'trakt_show', '', ', ', ' — ' );
+					$runtime = get_post_meta( get_the_id(), 'trakt_runtime', true );
+					printf( '%s minutes', absint( $runtime ) );
+				}
 			} ?>
 			<span class="entry-title-meta-post-date">
 			<span class="sep"> <?php echo apply_filters( 'independent_publisher_entry_meta_separator', '|' ); ?> </span>
