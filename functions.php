@@ -5,6 +5,12 @@
  */
 function jeherve_custom_theme_setup() {
 	add_image_size( 'single-thumbnail-top', 700, 240, array( 'center', 'top' ) );
+
+	// Declare AMP support.
+	//add_theme_support( 'amp' );
+
+	// Declare support for Geolocation.
+	add_theme_support( 'jetpack-geo-location' );
 }
 add_action( 'after_setup_theme', 'jeherve_custom_theme_setup', 11 );
 
