@@ -24,6 +24,15 @@ function jeherve_custom_styles_scripts() {
 	wp_dequeue_script( 'fade-post-title' );
 	wp_dequeue_style( 'customizer' );
 	wp_dequeue_script( 'enhanced-comment-form-js' );
+
+	// Welcome Page.
+	if ( is_page_template( 'welcome.php' ) ) {
+		wp_enqueue_script( 'splashjs', get_stylesheet_directory_uri() . '/welcome.js', array(), '0.0.1', true );
+	}
+
+	if ( is_post_type_archive( 'traktivity_event' ) ) {
+		wp_enqueue_script( 'trakt-event-grid', get_stylesheet_directory_uri() . '/js/event-grid.js', array( 'masonry' ), '1.0.0', true );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'jeherve_custom_styles_scripts', 11 );
 
