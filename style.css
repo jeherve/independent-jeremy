@@ -175,6 +175,61 @@ Structure tweaks
 Content
 ******************************/
 
+/* small text in our footer */
+#text-3 {
+	font-size: 0.8em;
+}
+
+/*
+Archive pages
+******************************/
+
+/* Trakt overall archive */
+
+.post-type-archive-traktivity_event .traktivity_event {
+	border: 0 none;
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+
+.post-type-archive-traktivity_event .traktivity_event h2 {
+	margin: 0;
+	font-size: 0.8em;
+	position: absolute;
+	top: 120px;
+	left: 0;
+	width: 100%;
+}
+
+.post-type-archive-traktivity_event .traktivity_event h2 a {
+	color: white;
+	font: bold 24px/45px Helvetica, Sans-Serif;
+	letter-spacing: -1px;
+	background: rgba(0, 0, 0, 0.7);
+	padding: 10px;
+}
+
+.post-type-archive-traktivity_event .grid-sizer,
+.post-type-archive-traktivity_event .traktivity_event {
+	width: 50%;
+}
+
+/* Trakt Show archive */
+
+.tax-trakt_show .poster-image img {
+	width: 100%;
+	height: auto;
+}
+
+.tax-trakt_show .page-header hr {
+	margin-top: 1.5em;
+}
+
+.tax-trakt_show .show_seasons div {
+	margin: 1em 0;
+}
+
 /*
 Comments
 ******************************/
@@ -187,4 +242,12 @@ Comments
 	background-color: #f5f5f5;
 	border-top: 1px solid;
 	border-radius: 0;
+}
+
+/*
+Code
+******************************/
+
+code {
+	background: none;
 }

@@ -98,17 +98,34 @@ function independent_publisher_site_info() {
  * @param string $contrast Matching contrast color.
  */
 function jeherve_custom_colors( $colors_css, $color, $contrast ) {
-	return sprintf(
+	$colors_css = sprintf(
 		'
 .post-thumbnail {
   position: relative; /* for child pseudo-element */
   margin: 0 -9999rem;
   /* add back negative margin value */
   padding: 0 9999rem;
-  background: #%s;
+  background: #%1$s;
+}
+.mejs-container, .mejs-container .mejs-controls, .mejs-embed, .mejs-embed body {
+    background: #%1$s !important;
 }
 	',
-		$color
+	$color
 	);
+
+	// if the contrast color is black (light background color), set the audio player colors to black.
+	if ( '0,0,0' === $contrast ) {
+		$colors_css .= sprintf(
+			"
+			.mejs-controls .mejs-button button { background-image: url('%s/mejs-controls-dark.svg') !important;}
+			.mejs-controls .mejs-time-rail .mejs-time-total, .mejs-controls .mejs-time-rail .mejs-time-current, .mejs-controls .mejs-time-rail .mejs-time-loaded { background-color: #000 !important; }
+			.mejs-controls .mejs-time .mejs-currenttime, .mejs-controls .mejs-time .mejs-duration { color: #000 !important;}
+			",
+			get_stylesheet_directory_uri()
+		);
+	}
+
+	return $colors_css;
 }
 add_filter( 'colorposts_css_output', 'jeherve_custom_colors', 10, 3 );
