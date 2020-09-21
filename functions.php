@@ -69,9 +69,19 @@ function independent_publisher_show_author_card() {
  */
 function independent_publisher_site_info() {
 	?>
-	<?php if ( get_header_image() ) : ?>
+	<?php if ( get_header_image() ) :
+
+	$header_image_args = array(
+		'resize' => absint( get_custom_header()->width ) . absint( get_custom_header()->height ),
+	);
+	$header_image = apply_filters(
+		'jetpack_photon_url',
+		get_header_image(),
+		$header_image_args
+	);
+	?>
 		<a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-			<img class="no-grav" src="<?php echo esc_url( get_header_image() ); ?>" height="<?php echo absint( get_custom_header()->height ); ?>" width="<?php echo absint( get_custom_header()->width ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
+			<img class="no-grav" src="<?php echo esc_url( $header_image ); ?>" height="<?php echo absint( get_custom_header()->height ); ?>" width="<?php echo absint( get_custom_header()->width ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
 		</a>
 	<?php endif; ?>
 	<h1 class="site-title">
